@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>network-bridge — прокси-мост SOCKS5/HTTP · СТВОЛ</title>
+<meta name="description" content="Локальный мост, транслирующий HTTP в CONNECT-туннель, с самотестом 2/2 и systemd-обвязкой.">
+<link rel="canonical" href="https://fanatat.github.io/b/network-bridge">
+<meta name="theme-color" content="#05070A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="СТВОЛ · TRUNK">
+<meta property="og:url" content="https://fanatat.github.io/b/network-bridge">
+<meta property="og:title" content="network-bridge — прокси-мост SOCKS5/HTTP · СТВОЛ">
+<meta property="og:description" content="Локальный мост, транслирующий HTTP в CONNECT-туннель, с самотестом 2/2 и systemd-обвязкой.">
+<meta name="twitter:title" content="network-bridge — прокси-мост SOCKS5/HTTP · СТВОЛ">
+<meta name="twitter:description" content="Локальный мост, транслирующий HTTP в CONNECT-туннель, с самотестом 2/2 и systemd-обвязкой.">
+<meta property="og:image" content="https://fanatat.github.io/og/network-bridge.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fanatat.github.io/og/network-bridge.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"network-bridge","description":"Локальный мост, транслирующий HTTP в CONNECT-туннель, с самотестом 2/2 и systemd-обвязкой.","url":"https://fanatat.github.io/b/network-bridge","image":"https://fanatat.github.io/og/network-bridge.png","creator":{"@type":"Person","name":"Юри Хенкель"}}</script>
+
+<link rel="stylesheet" href="/assets/boot-DUfPsGpK.css">
+</head>
+<body>
+<a class="skip-link" href="#app">К содержимому</a>
+<div class="container">
+<header class="site-header">
+  <a class="brand" href="/">СТВОЛ · TRUNK</a>
+  <nav class="site-nav mono" aria-label="Навигация">
+    <a href="/">СТВОЛ</a>
+    <a href="/map">КАРТА</a>
+  </nav>
+</header>
+</div>
+<main id="app">
+<div class="container">
+
+<div class="branch-hero reveal" data-reveal-group="branch-cascade" style="--hue:#35A7FF">
+  <span class="branch-code mono">NETWORK-BRIDGE · PROD</span>
+  <h1 tabindex="-1">network-bridge</h1>
+  <p class="prose" style="font-size:20px">Локальный прокси-мост, который говорит на двух протоколах сразу.</p>
+</div>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-b">
+  <span class="block-label mono">Кадр-доказательство</span>
+  <p class="prose">Анимированная схема пути пакета: клиент → мост 0.0.0.0:1080 → ISP-прокси → дата-центр. Тумблер переключает протокол клиента SOCKS5 / HTTP — видно, как мост в случае HTTP превращает запрос в CONNECT-туннель. Сбоку — самотест 2/2: одиночный туннель до Telegram DC и восемь параллельных туннелей.</p>
+  
+  <div class="mechanism-slot" data-mechanism-slot data-branch-slug="network-bridge"><details class="mech-artifact mech-details" open><summary>Самотест · 2/2 · 2026-08-28</summary><div class="mech-body"><ul class="mech-checklist"><li class="mech-check"><span class="mech-check-id mono">Одиночный туннель до Telegram DC</span><span class="mech-check-status">OK</span></li><li class="mech-check"><span class="mech-check-id mono">8 туннелей одновременно</span><span class="mech-check-status">8/8</span></li></ul></div></details></div>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-c">
+  <span class="block-label mono">Разрез</span>
+  <ul class="arch-flow"><li>Клиент SOCKS5 / HTTP</li><li>bridge.py :1080</li><li>ISP-прокси</li><li>Дата-центр</li><li>Самотест 2/2</li></ul>
+  <div class="arch-diagram" data-arch-diagram aria-hidden="true"></div>
+</section>
+
+<section class="block tradeoff-text reveal" data-reveal-group="branch-cascade" id="block-d">
+  <span class="block-label mono">Цена решения</span>
+  <p>Почему документация построена лестницей «от простого к сложному» — сначала настройка прокси прямо в клиенте, только потом bridge.py, и лишь в крайнем случае Proxifier с готовым профилем. Потому что инструмент, который начинается с самого мощного решения, гарантированно будет применён неправильно.</p>
+    <p>Trade-off: документация длиннее и выглядит избыточной для опытного пользователя.</p>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-e">
+  <span class="block-label mono">Статус</span>
+  <table class="status-table">
+    <tr><th>Работает</th><td>Продакшн, tg-bridge.service; Самотест 2/2</td></tr>
+    <tr><th>Не работает</th><td>—</td></tr>
+    <tr><th>Дальше</th><td>—</td></tr>
+  </table>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-f">
+  <span class="block-label mono">Связи</span>
+  <p class="text-dim block-caption">С какими ветвями и чем именно связан проект</p>
+  <ul class="bridges-list"><li><a href="/b/video-digest"><span class="to-title">Дайджест</span><span class="to-label">Один ISP-прокси обслуживает оба</span></a></li></ul>
+</section>
+</div>
+</main>
+<div class="container">
+<footer class="site-footer">
+  <span class="mono text-dim footer-legal">© 2026 · все права защищены · <a href="/privacy">конфиденциальность</a></span>
+  <div class="footer-toggles">
+    <button class="toggle" type="button" data-toggle="light-mode" aria-pressed="false">ОБЛЕГЧЁННЫЙ РЕЖИМ</button>
+    <span class="toggle-status mono text-dim" data-toggle-status aria-live="polite"></span>
+  </div>
+</footer>
+</div>
+<script type="module" src="/assets/boot-JXMA9PpY.js"></script>
+</body>
+</html>

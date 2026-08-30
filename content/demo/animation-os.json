@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "placeholder": true,
+  "nodes": [
+    {
+      "id": "script",
+      "label": "Script",
+      "artifactType": "json",
+      "artifactUrl": "/assets/animation-os/script.json"
+    },
+    {
+      "id": "episode",
+      "label": "Episode",
+      "artifactType": "json",
+      "artifactUrl": "/assets/animation-os/episode.json"
+    },
+    {
+      "id": "scene",
+      "label": "Scene",
+      "artifactType": "json",
+      "artifactUrl": "/assets/animation-os/scene.json"
+    },
+    {
+      "id": "entities",
+      "label": "Entities",
+      "artifactType": "model",
+      "artifactUrl": "/assets/animation-os/entities.json"
+    },
+    {
+      "id": "environments",
+      "label": "Environments",
+      "artifactType": "model",
+      "artifactUrl": "/assets/animation-os/environments.json"
+    },
+    {
+      "id": "shot",
+      "label": "Shot",
+      "artifactType": "json",
+      "artifactUrl": "/assets/animation-os/shot.json"
+    },
+    {
+      "id": "prompt",
+      "label": "Prompt",
+      "artifactType": "prompt",
+      "artifactUrlByLang": {
+        "en": "/assets/animation-os/prompt.en.txt",
+        "es": "/assets/animation-os/prompt.es.txt",
+        "ru": "/assets/animation-os/prompt.ru.txt"
+      }
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "artifactType": "image",
+      "imageUrl": "/assets/animation-os/image-placeholder.svg",
+      "captionByLang": {
+        "en": "Infrastructure is ready, content quality is next.",
+        "es": "La infraestructura está lista, la calidad del contenido viene después.",
+        "ru": "Инфраструктура готова, качество контента впереди."
+      }
+    },
+    {
+      "id": "audio",
+      "label": "Audio",
+      "artifactType": "audio",
+      "waveformUrl": "/assets/animation-os/waveform.json",
+      "voiceByLang": {
+        "en": "Piper — en_US-amy (заглушка)",
+        "es": "Piper — es_ES-carmen (заглушка)",
+        "ru": "Piper — ru_RU-irina (заглушка)"
+      }
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "artifactType": "json",
+      "artifactUrl": "/assets/animation-os/timeline.json"
+    },
+    {
+      "id": "export",
+      "label": "Export",
+      "artifactType": "json",
+      "artifactUrl": "/assets/animation-os/export.json"
+    }
+  ]
+}

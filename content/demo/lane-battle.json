@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "balance": {
+    "damage": 8,
+    "hp": 30,
+    "speed": 40,
+    "economy": 4
+  },
+  "spawnCost": 10,
+  "durationSeconds": 20,
+  "defaultSeed": 42
+}

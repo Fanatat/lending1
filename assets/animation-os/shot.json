@@ -1,0 +1,9 @@
+{
+  "_placeholder": true,
+  "_note": "Заглушка. Реальный шот-лист — после материалов от автора.",
+  "shot_id": "sh-004",
+  "scene_id": "sc-002",
+  "camera": "static_wide",
+  "duration_s": 4.5,
+  "entities": ["narrator", "sky_environment"]
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nonogram — японские кроссворды на Canvas · СТВОЛ</title>
+<meta name="description" content="130 уровней, 338 тестов, солвер с пошаговой дедукцией, режим без штрафов.">
+<link rel="canonical" href="https://fanatat.github.io/b/nonogram">
+<meta name="theme-color" content="#05070A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="СТВОЛ · TRUNK">
+<meta property="og:url" content="https://fanatat.github.io/b/nonogram">
+<meta property="og:title" content="Nonogram — японские кроссворды на Canvas · СТВОЛ">
+<meta property="og:description" content="130 уровней, 338 тестов, солвер с пошаговой дедукцией, режим без штрафов.">
+<meta name="twitter:title" content="Nonogram — японские кроссворды на Canvas · СТВОЛ">
+<meta name="twitter:description" content="130 уровней, 338 тестов, солвер с пошаговой дедукцией, режим без штрафов.">
+<meta property="og:image" content="https://fanatat.github.io/og/nonogram.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fanatat.github.io/og/nonogram.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Nonogram","description":"130 уровней, 338 тестов, солвер с пошаговой дедукцией, режим без штрафов.","url":"https://fanatat.github.io/b/nonogram","image":"https://fanatat.github.io/og/nonogram.png","creator":{"@type":"Person","name":"Юри Хенкель"}}</script>
+
+<link rel="stylesheet" href="/assets/boot-DUfPsGpK.css">
+</head>
+<body>
+<a class="skip-link" href="#app">К содержимому</a>
+<div class="container">
+<header class="site-header">
+  <a class="brand" href="/">СТВОЛ · TRUNK</a>
+  <nav class="site-nav mono" aria-label="Навигация">
+    <a href="/">СТВОЛ</a>
+    <a href="/map">КАРТА</a>
+  </nav>
+</header>
+</div>
+<main id="app">
+<div class="container">
+
+<div class="branch-hero reveal" data-reveal-group="branch-cascade" style="--hue:#AEBAC6">
+  <span class="branch-code mono">GAME2 · КОД-КОМПЛИТ</span>
+  <h1 tabindex="-1">Nonogram</h1>
+  <p class="prose" style="font-size:20px">Японские кроссворды. 130 уровней. 338 тестов.</p>
+</div>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-b">
+  <span class="block-label mono">Кадр-доказательство</span>
+  <p class="prose">Мини-нонограмма 5×5 с настоящей логикой подсчёта. Кнопка «показать, как её решает солвер» включает пошаговую подсветку дедукции — это объясняет жанр за десять секунд.</p>
+  
+  <div class="mechanism-slot" data-mechanism-slot data-branch-slug="nonogram"><details class="mech-artifact mech-details" open><summary>5×5 · решено · 9/25 клеток</summary><div class="mech-body"><div class="mech-grid-wrap"><table class="mech-grid-table"><tr><td class="is-clue"></td><td class="is-clue">1</td><td class="is-clue">1</td><td class="is-clue">5</td><td class="is-clue">1</td><td class="is-clue">1</td></tr><tr><td class="is-clue">1</td><td></td><td></td><td class="is-filled"></td><td></td><td></td></tr><tr><td class="is-clue">1</td><td></td><td></td><td class="is-filled"></td><td></td><td></td></tr><tr><td class="is-clue">5</td><td class="is-filled"></td><td class="is-filled"></td><td class="is-filled"></td><td class="is-filled"></td><td class="is-filled"></td></tr><tr><td class="is-clue">1</td><td></td><td></td><td class="is-filled"></td><td></td><td></td></tr><tr><td class="is-clue">1</td><td></td><td></td><td class="is-filled"></td><td></td><td></td></tr></table></div></div></details></div>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-c">
+  <span class="block-label mono">Разрез</span>
+  <ul class="arch-flow"><li>Генератор 130 уровней</li><li>Solver: пошаговая дедукция</li><li>Canvas без библиотек</li><li>Retention-модуль</li></ul>
+  <div class="arch-diagram" data-arch-diagram aria-hidden="true"></div>
+</section>
+
+<section class="block tradeoff-text reveal" data-reveal-group="branch-cascade" id="block-d">
+  <span class="block-label mono">Цена решения</span>
+  <p>Почему свободный режим без штрафов за ошибку и аудитория 0+. Классический нонограм наказывает — и теряет казуального игрока на третьем уровне.</p>
+    <p>Убрав штраф, теряешь напряжение; взамен получаешь удержание. Решение принято в пользу удержания, и retention-модуль пишется именно под него.</p>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-e">
+  <span class="block-label mono">Статус</span>
+  <table class="status-table">
+    <tr><th>Работает</th><td>Готовые сборки под обе площадки в releases/2026-08-22/</td></tr>
+    <tr><th>Не работает</th><td>Содержательная приёмка retention-модуля основателем не пройдена</td></tr>
+    <tr><th>Дальше</th><td>—</td></tr>
+  </table>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-f">
+  <span class="block-label mono">Связи</span>
+  <p class="text-dim block-caption">С какими ветвями и чем именно связан проект</p>
+  <ul class="bridges-list"><li><a href="/b/filword"><span class="to-title">Словоход</span><span class="to-label">Ванильный JS, ноль зависимостей</span></a></li><li><a href="/b/color-sort"><span class="to-title">Color Sort</span><span class="to-label">Canvas без библиотек, правило студии</span></a></li><li><a href="/b/studio-promo"><span class="to-title">studio-promo</span><span class="to-label">Общий маскот, копия с фиксацией sha256</span></a></li></ul>
+</section>
+</div>
+</main>
+<div class="container">
+<footer class="site-footer">
+  <span class="mono text-dim footer-legal">© 2026 · все права защищены · <a href="/privacy">конфиденциальность</a></span>
+  <div class="footer-toggles">
+    <button class="toggle" type="button" data-toggle="light-mode" aria-pressed="false">ОБЛЕГЧЁННЫЙ РЕЖИМ</button>
+    <span class="toggle-status mono text-dim" data-toggle-status aria-live="polite"></span>
+  </div>
+</footer>
+</div>
+<script type="module" src="/assets/boot-JXMA9PpY.js"></script>
+</body>
+</html>

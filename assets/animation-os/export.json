@@ -1,0 +1,10 @@
+{
+  "_placeholder": true,
+  "_note": "Заглушка. Реальный манифест экспорта — после материалов от автора.",
+  "episode_id": "ep-001",
+  "outputs": [
+    { "lang": "ru", "file": "ep-001_ru.mp4", "status": "planned" },
+    { "lang": "en", "file": "ep-001_en.mp4", "status": "planned" },
+    { "lang": "es", "file": "ep-001_es.mp4", "status": "planned" }
+  ]
+}

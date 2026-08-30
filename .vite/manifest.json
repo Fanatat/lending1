@@ -1,0 +1,140 @@
+{
+  "src/branches/airmonitor.ts": {
+    "file": "assets/airmonitor-Z55aLSxv.js",
+    "name": "airmonitor",
+    "src": "src/branches/airmonitor.ts",
+    "isDynamicEntry": true
+  },
+  "src/branches/animation-os.ts": {
+    "file": "assets/animation-os-CPdv87KL.js",
+    "name": "animation-os",
+    "src": "src/branches/animation-os.ts",
+    "isDynamicEntry": true
+  },
+  "src/branches/burya.ts": {
+    "file": "assets/burya-DE_vBL5r.js",
+    "name": "burya",
+    "src": "src/branches/burya.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/branches/mech-shared.ts",
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/bybit.ts": {
+    "file": "assets/bybit-BiYGuZaa.js",
+    "name": "bybit",
+    "src": "src/branches/bybit.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/color-sort.ts": {
+    "file": "assets/color-sort-B6YH6zCV.js",
+    "name": "color-sort",
+    "src": "src/branches/color-sort.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/dzen.ts": {
+    "file": "assets/dzen-DGWgZtXE.js",
+    "name": "dzen",
+    "src": "src/branches/dzen.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/filword.ts": {
+    "file": "assets/filword-BZNeup4d.js",
+    "name": "filword",
+    "src": "src/branches/filword.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/branches/mech-shared.ts",
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/lane-battle.ts": {
+    "file": "assets/lane-battle-BysBYOQy.js",
+    "name": "lane-battle",
+    "src": "src/branches/lane-battle.ts",
+    "isDynamicEntry": true
+  },
+  "src/branches/mech-shared.ts": {
+    "file": "assets/mech-shared-DjztATSg.js",
+    "name": "mech-shared",
+    "src": "src/branches/mech-shared.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/network-bridge.ts": {
+    "file": "assets/network-bridge-CpAQJ8Mj.js",
+    "name": "network-bridge",
+    "src": "src/branches/network-bridge.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/branches/mech-shared.ts",
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/nonogram.ts": {
+    "file": "assets/nonogram-DL8aPaoA.js",
+    "name": "nonogram",
+    "src": "src/branches/nonogram.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/branches/mech-shared.ts",
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/studio-promo.ts": {
+    "file": "assets/studio-promo-BS9i4YKl.js",
+    "name": "studio-promo",
+    "src": "src/branches/studio-promo.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/branches/mech-shared.ts",
+      "src/core/boot.ts"
+    ]
+  },
+  "src/branches/video-digest.ts": {
+    "file": "assets/video-digest-Dk_c7Qa5.js",
+    "name": "video-digest",
+    "src": "src/branches/video-digest.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/branches/mech-shared.ts",
+      "src/core/boot.ts"
+    ]
+  },
+  "src/core/boot.ts": {
+    "file": "assets/boot-JXMA9PpY.js",
+    "name": "boot",
+    "src": "src/core/boot.ts",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/branches/airmonitor.ts",
+      "src/branches/animation-os.ts",
+      "src/branches/burya.ts",
+      "src/branches/bybit.ts",
+      "src/branches/color-sort.ts",
+      "src/branches/dzen.ts",
+      "src/branches/filword.ts",
+      "src/branches/lane-battle.ts",
+      "src/branches/mech-shared.ts",
+      "src/branches/network-bridge.ts",
+      "src/branches/nonogram.ts",
+      "src/branches/studio-promo.ts",
+      "src/branches/video-digest.ts"
+    ],
+    "css": [
+      "assets/boot-DUfPsGpK.css"
+    ]
+  }
+}

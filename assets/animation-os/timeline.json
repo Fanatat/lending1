@@ -1,0 +1,11 @@
+{
+  "_placeholder": true,
+  "_note": "Заглушка. Реальный таймлайн — после материалов от автора.",
+  "episode_id": "ep-001",
+  "tracks": [
+    { "type": "video", "clips": 3 },
+    { "type": "audio_voice", "clips": 3 },
+    { "type": "audio_music", "clips": 0 }
+  ],
+  "total_duration_s": 90
+}

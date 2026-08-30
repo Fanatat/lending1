@@ -1,0 +1,11 @@
+{
+  "_placeholder": true,
+  "_note": "Заглушка. Реальная Pydantic-модель — после материалов от автора.",
+  "model": "Environment",
+  "fields": {
+    "id": "str",
+    "name": "str",
+    "lighting": "Literal['day', 'night', 'studio']",
+    "backdrop_ref": "str | None"
+  }
+}

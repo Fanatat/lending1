@@ -1,0 +1,12 @@
+{
+  "_placeholder": true,
+  "_note": "Заглушка. Реальная Pydantic-модель — после материалов от автора.",
+  "model": "Entity",
+  "fields": {
+    "id": "str",
+    "kind": "Literal['character', 'prop', 'environment']",
+    "name": "str",
+    "visual_ref": "str | None",
+    "voice_ref": "str | None"
+  }
+}

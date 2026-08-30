@@ -1,0 +1,8 @@
+{
+  "_placeholder": true,
+  "_note": "Заглушка. Реальные метаданные эпизода — после материалов от автора.",
+  "episode_id": "ep-001",
+  "duration_target_s": 90,
+  "language_targets": ["en", "es", "ru"],
+  "status": "draft"
+}

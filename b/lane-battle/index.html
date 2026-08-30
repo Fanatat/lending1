@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lane Battle — прототип автобоя · СТВОЛ</title>
+<meta name="description" content="Двадцатисекундный автобой с живыми слайдерами баланса прямо в странице.">
+<link rel="canonical" href="https://fanatat.github.io/b/lane-battle">
+<meta name="theme-color" content="#05070A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="СТВОЛ · TRUNK">
+<meta property="og:url" content="https://fanatat.github.io/b/lane-battle">
+<meta property="og:title" content="Lane Battle — прототип автобоя · СТВОЛ">
+<meta property="og:description" content="Двадцатисекундный автобой с живыми слайдерами баланса прямо в странице.">
+<meta name="twitter:title" content="Lane Battle — прототип автобоя · СТВОЛ">
+<meta name="twitter:description" content="Двадцатисекундный автобой с живыми слайдерами баланса прямо в странице.">
+<meta property="og:image" content="https://fanatat.github.io/og/lane-battle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fanatat.github.io/og/lane-battle.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Lane Battle","description":"Двадцатисекундный автобой с живыми слайдерами баланса прямо в странице.","url":"https://fanatat.github.io/b/lane-battle","image":"https://fanatat.github.io/og/lane-battle.png","creator":{"@type":"Person","name":"Юри Хенкель"}}</script>
+
+<link rel="stylesheet" href="/assets/boot-DUfPsGpK.css">
+</head>
+<body>
+<a class="skip-link" href="#app">К содержимому</a>
+<div class="container">
+<header class="site-header">
+  <a class="brand" href="/">СТВОЛ · TRUNK</a>
+  <nav class="site-nav mono" aria-label="Навигация">
+    <a href="/">СТВОЛ</a>
+    <a href="/map">КАРТА</a>
+  </nav>
+</header>
+</div>
+<main id="app">
+<div class="container">
+
+<div class="branch-hero reveal" data-reveal-group="branch-cascade" style="--hue:#FF6B4A">
+  <span class="branch-code mono">GAME4 · ПРОТОТИП</span>
+  <h1 tabindex="-1">Lane Battle</h1>
+  <p class="prose" style="font-size:20px">Прототип, который проверяет ровно один вопрос: кайфово ли это.</p>
+</div>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-b">
+  <span class="block-label mono">Кадр-доказательство</span>
+  <p class="prose">Двадцатисекундный автобой прямо в странице, Canvas 2D, юниты — прямоугольники без арта. Игрок только спавнит юнитов на накопленную еду, бой идёт сам. Сбоку — живые слайдеры баланса (урон, HP, скорость, экономика): крутишь — меняется текущий бой, без перезапуска. Кнопка «сброс к балансу автора» возвращает исходные значения. Бой детерминирован: тот же сид и те же параметры дают тот же результат — сид показан и меняется кнопкой, есть кнопка «повторить бой».</p>
+  
+  <div class="mechanism-slot" data-mechanism-slot data-branch-slug="lane-battle" aria-hidden="true"></div>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-c">
+  <span class="block-label mono">Разрез</span>
+  <ul class="arch-flow"><li>Автобой-симуляция</li><li>Юниты по накопленной еде</li><li>balance.json (живой тюнинг)</li><li>Ветка prototype/battle</li></ul>
+  <div class="arch-diagram" data-arch-diagram aria-hidden="true"></div>
+</section>
+
+<section class="block tradeoff-text reveal" data-reveal-group="branch-cascade" id="block-d">
+  <span class="block-label mono">Цена решения</span>
+  <p>Почему прототип сознательно урезан до неприличия — без меты, без сохранений, без SDK площадок, без звука и финального арта. Потому что если ядро боя не «кайфовое» на голых прямоугольниках, никакая мета его не спасёт, а вложенные в мету три недели будут потрачены впустую.</p>
+    <p>Trade-off: прототип нельзя показать инвестору или площадке — он выглядит нищим. Он и не для них.</p>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-e">
+  <span class="block-label mono">Статус</span>
+  <table class="status-table">
+    <tr><th>Работает</th><td>Ветка prototype/battle, ТЗ №01 сдано с отчётом и скриншотами</td></tr>
+    <tr><th>Не работает</th><td>—</td></tr>
+    <tr><th>Дальше</th><td>ТЗ №02, контр-типы юнитов</td></tr>
+  </table>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-f">
+  <span class="block-label mono">Связи</span>
+  <p class="text-dim block-caption">С какими ветвями и чем именно связан проект</p>
+  <ul class="bridges-list"><li><a href="/b/color-sort"><span class="to-title">Color Sort</span><span class="to-label">Баланс вынесен в JSON, тюнинг без пересборки</span></a></li></ul>
+</section>
+</div>
+</main>
+<div class="container">
+<footer class="site-footer">
+  <span class="mono text-dim footer-legal">© 2026 · все права защищены · <a href="/privacy">конфиденциальность</a></span>
+  <div class="footer-toggles">
+    <button class="toggle" type="button" data-toggle="light-mode" aria-pressed="false">ОБЛЕГЧЁННЫЙ РЕЖИМ</button>
+    <span class="toggle-status mono text-dim" data-toggle-status aria-live="polite"></span>
+  </div>
+</footer>
+</div>
+<script type="module" src="/assets/boot-JXMA9PpY.js"></script>
+</body>
+</html>

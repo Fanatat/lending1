@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>airmonitor — телеметрия воздуха в квартире · СТВОЛ</title>
+<meta name="description" content="Семь датчиков, ThreadingHTTPServer без фреймворка, живые данные из квартиры автора с задержкой до 60 секунд.">
+<link rel="canonical" href="https://fanatat.github.io/b/airmonitor">
+<meta name="theme-color" content="#05070A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="СТВОЛ · TRUNK">
+<meta property="og:url" content="https://fanatat.github.io/b/airmonitor">
+<meta property="og:title" content="airmonitor — телеметрия воздуха в квартире · СТВОЛ">
+<meta property="og:description" content="Семь датчиков, ThreadingHTTPServer без фреймворка, живые данные из квартиры автора с задержкой до 60 секунд.">
+<meta name="twitter:title" content="airmonitor — телеметрия воздуха в квартире · СТВОЛ">
+<meta name="twitter:description" content="Семь датчиков, ThreadingHTTPServer без фреймворка, живые данные из квартиры автора с задержкой до 60 секунд.">
+<meta property="og:image" content="https://fanatat.github.io/og/airmonitor.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fanatat.github.io/og/airmonitor.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"airmonitor","description":"Семь датчиков, ThreadingHTTPServer без фреймворка, живые данные из квартиры автора с задержкой до 60 секунд.","url":"https://fanatat.github.io/b/airmonitor","image":"https://fanatat.github.io/og/airmonitor.png","creator":{"@type":"Person","name":"Юри Хенкель"}}</script>
+
+<link rel="stylesheet" href="/assets/boot-DUfPsGpK.css">
+</head>
+<body>
+<a class="skip-link" href="#app">К содержимому</a>
+<div class="container">
+<header class="site-header">
+  <a class="brand" href="/">СТВОЛ · TRUNK</a>
+  <nav class="site-nav mono" aria-label="Навигация">
+    <a href="/">СТВОЛ</a>
+    <a href="/map">КАРТА</a>
+  </nav>
+</header>
+</div>
+<main id="app">
+<div class="container">
+
+<div class="branch-hero reveal" data-reveal-group="branch-cascade" style="--hue:#6FD3FF">
+  <span class="branch-code mono">AIRMONITOR · PROD</span>
+  <h1 tabindex="-1">airmonitor</h1>
+  <p class="prose" style="font-size:20px">Комната, у которой есть телеметрия.</p>
+</div>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-b">
+  <span class="block-label mono">Кадр-доказательство</span>
+  <p class="prose">Семь концентрических колец на Canvas — по кольцу на датчик (T/RH, давление, освещённость, VOC/NOx, PM1/2.5/10, CO₂, шум). Кольцо пульсирует в такт своим показаниям. Пока живой контур не подключён (отдельный инкремент ТЗ-06Б) — демо-данные за прошедшие сутки, схема файла уже совпадает с будущей боевой. Кольца освещённости и шума показывают статус PRIVATE вместо значения: автор решил их не публиковать. Рядом переключатель «Сейчас / Сутки»: второй режим проигрывает скользящие 24 часа за 40 секунд со скраббером. Если метка времени устареет, механизм уходит в режим суток и показывает статус OFFLINE с последними данными.</p>
+  
+  <div class="mechanism-slot" data-mechanism-slot data-branch-slug="airmonitor" aria-hidden="true"></div>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-c">
+  <span class="block-label mono">Разрез</span>
+  <ul class="arch-flow"><li>ESP32 · 7 датчиков</li><li>HTTP POST</li><li>ThreadingHTTPServer (Celeron)</li><li>SQLite снапшот</li><li>фронтенд · кольца</li></ul>
+  <div class="arch-diagram" data-arch-diagram aria-hidden="true"></div>
+</section>
+
+<section class="block tradeoff-text reveal" data-reveal-group="branch-cascade" id="block-d">
+  <span class="block-label mono">Цена решения</span>
+  <p>Почему бэкенд — голый http.server.ThreadingHTTPServer без единого фреймворка. Потому что Celeron G3900 и 8 ГБ держат на себе двенадцать проектов, и каждый мегабайт RSS под FastAPI — это мегабайт, отобранный у чего-то живого.</p>
+    <p>Trade-off назван прямо: нет валидации из коробки, нет OpenAPI, роутинг руками. Взамен — сервис, который переживает Restart=always без разговоров.</p>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-e">
+  <span class="block-label mono">Статус</span>
+  <table class="status-table">
+    <tr><th>Работает</th><td>Продакшн, systemd, Restart=always</td></tr>
+    <tr><th>Не работает</th><td>Баг I2S-микрофона поправлен в коде, не проверен на железе</td></tr>
+    <tr><th>Дальше</th><td>Удалённый доступ сознательно не сделан: эндпоинты без авторизации, порт наружу не открыт</td></tr>
+  </table>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-f">
+  <span class="block-label mono">Связи</span>
+  <p class="text-dim block-caption">С какими ветвями и чем именно связан проект</p>
+  <ul class="bridges-list"><li><a href="/b/bybit"><span class="to-title">ByBit</span><span class="to-label">SQLite и снапшот по расписанию, ротация</span></a></li><li><a href="/b/animation-os"><span class="to-title">AI Animation OS</span><span class="to-label">Один Celeron на всех, железо как ограничение</span></a></li></ul>
+</section>
+</div>
+</main>
+<div class="container">
+<footer class="site-footer">
+  <span class="mono text-dim footer-legal">© 2026 · все права защищены · <a href="/privacy">конфиденциальность</a></span>
+  <div class="footer-toggles">
+    <button class="toggle" type="button" data-toggle="light-mode" aria-pressed="false">ОБЛЕГЧЁННЫЙ РЕЖИМ</button>
+    <span class="toggle-status mono text-dim" data-toggle-status aria-live="polite"></span>
+  </div>
+</footer>
+</div>
+<script type="module" src="/assets/boot-JXMA9PpY.js"></script>
+</body>
+</html>

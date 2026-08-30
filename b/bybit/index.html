@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ByBit — риск-аналитика без рекомендаций · СТВОЛ</title>
+<meta name="description" content="Нормированная кривая портфеля, стресс-тест, kill-switch на торговые права API-ключа.">
+<link rel="canonical" href="https://fanatat.github.io/b/bybit">
+<meta name="theme-color" content="#05070A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="СТВОЛ · TRUNK">
+<meta property="og:url" content="https://fanatat.github.io/b/bybit">
+<meta property="og:title" content="ByBit — риск-аналитика без рекомендаций · СТВОЛ">
+<meta property="og:description" content="Нормированная кривая портфеля, стресс-тест, kill-switch на торговые права API-ключа.">
+<meta name="twitter:title" content="ByBit — риск-аналитика без рекомендаций · СТВОЛ">
+<meta name="twitter:description" content="Нормированная кривая портфеля, стресс-тест, kill-switch на торговые права API-ключа.">
+<meta property="og:image" content="https://fanatat.github.io/og/bybit.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fanatat.github.io/og/bybit.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"ByBit","description":"Нормированная кривая портфеля, стресс-тест, kill-switch на торговые права API-ключа.","url":"https://fanatat.github.io/b/bybit","image":"https://fanatat.github.io/og/bybit.png","creator":{"@type":"Person","name":"Юри Хенкель"}}</script>
+
+<link rel="stylesheet" href="/assets/boot-DUfPsGpK.css">
+</head>
+<body>
+<a class="skip-link" href="#app">К содержимому</a>
+<div class="container">
+<header class="site-header">
+  <a class="brand" href="/">СТВОЛ · TRUNK</a>
+  <nav class="site-nav mono" aria-label="Навигация">
+    <a href="/">СТВОЛ</a>
+    <a href="/map">КАРТА</a>
+  </nav>
+</header>
+</div>
+<main id="app">
+<div class="container">
+
+<div class="branch-hero reveal" data-reveal-group="branch-cascade" style="--hue:#F2C14E">
+  <span class="branch-code mono">BYBIT · РАЗРАБОТКА</span>
+  <h1 tabindex="-1">ByBit</h1>
+  <p class="prose" style="font-size:20px">Не приумножить. Не потерять.</p>
+</div>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-b">
+  <span class="block-label mono">Кадр-доказательство</span>
+  <p class="prose">Двухчастный механизм на демо-данных (живой контур — отдельным инкрементом ТЗ-06Б, схема файла уже совпадает с будущей боевой). Слева — нормированная кривая портфеля с просадками (старт равен 100, абсолютных сумм нет). Ползунок стресс-теста «обвал рынка от −10% до −50% за неделю» перестраивает кривую и просадку на лету, без рекомендаций — только последствия. Справа — kill-switch: тумблер «выдать API-ключу торговые права». При включении за 400 мс механизм заливается красным, кривая замирает, ползунок стресс-теста блокируется, и в лог падает строка о срабатывании — это видно и без цвета. Выключение возвращает исходное состояние.</p>
+  
+  <div class="mechanism-slot" data-mechanism-slot data-branch-slug="bybit" aria-hidden="true"></div>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-c">
+  <span class="block-label mono">Разрез</span>
+  <ul class="arch-flow"><li>Сбор рыночных данных</li><li>Python/numpy расчёт</li><li>Нормировка кривой к 100</li><li>LLM: текст по готовым цифрам</li><li>Kill-switch на торговые права</li></ul>
+  <div class="arch-diagram" data-arch-diagram aria-hidden="true"></div>
+</section>
+
+<section class="block tradeoff-text reveal" data-reveal-group="branch-cascade" id="block-d">
+  <span class="block-label mono">Цена решения</span>
+  <p>Почему система, которая умеет считать, принципиально не даёт торговых рекомендаций и выключает себя при первом признаке торговых прав. Аналитика — детерминированный Python/numpy; LLM пишет текст по готовым цифрам и не считает сама; решение принимает только человек.</p>
+    <p>Заплачено отказом от целого класса функций, ради которого такие системы обычно и пишут.</p>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-e">
+  <span class="block-label mono">Статус</span>
+  <table class="status-table">
+    <tr><th>Работает</th><td>Сбор и расчёты пройдены, первый полный отчёт получен; Systemd unit/timer готовы</td></tr>
+    <tr><th>Не работает</th><td>Сервис не запущен</td></tr>
+    <tr><th>Дальше</th><td>notifier.py и Telegram-алерты</td></tr>
+  </table>
+</section>
+
+<section class="block reveal" data-reveal-group="branch-cascade" id="block-f">
+  <span class="block-label mono">Связи</span>
+  <p class="text-dim block-caption">С какими ветвями и чем именно связан проект</p>
+  <ul class="bridges-list"><li><a href="/b/airmonitor"><span class="to-title">airmonitor</span><span class="to-label">SQLite и снапшот по расписанию, ротация</span></a></li><li><a href="/b/animation-os"><span class="to-title">AI Animation OS</span><span class="to-label">LLM пишет текст, но не считает и не решает</span></a></li></ul>
+</section>
+</div>
+</main>
+<div class="container">
+<footer class="site-footer">
+  <span class="mono text-dim footer-legal">© 2026 · все права защищены · <a href="/privacy">конфиденциальность</a></span>
+  <div class="footer-toggles">
+    <button class="toggle" type="button" data-toggle="light-mode" aria-pressed="false">ОБЛЕГЧЁННЫЙ РЕЖИМ</button>
+    <span class="toggle-status mono text-dim" data-toggle-status aria-live="polite"></span>
+  </div>
+</footer>
+</div>
+<script type="module" src="/assets/boot-JXMA9PpY.js"></script>
+</body>
+</html>
